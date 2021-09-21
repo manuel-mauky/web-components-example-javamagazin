@@ -18,6 +18,7 @@ class ProfileInfo extends HTMLElement {
             <div>
                 <p id="user-name"></p>
                 <img id="profile-image">
+                <div id="description"><slot name="description">Add a description</slot></div>
             </div>
         `
     }
