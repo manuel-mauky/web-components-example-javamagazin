@@ -1,0 +1,14 @@
+{
+  "name": "webcomponents-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server src/"
+  },
+  "author": "Manuel Mauky",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^13.0.2"
+  }
+}
