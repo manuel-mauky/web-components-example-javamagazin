@@ -21,6 +21,19 @@ class ProfileInfo extends HTMLElement {
                 <div id="description"><slot name="description">Add a description</slot></div>
             </div>
         `
+
+        this.shadowRoot.querySelector("#profile-image").addEventListener("click", () => {
+            this.dispatchEvent(new CustomEvent("profile-clicked", {
+                bubbles: true,
+                composed: true,
+                cancelable: false,
+                detail: {
+                    profile: {
+                        username: this.userName
+                    }
+                }
+            }))
+        })
     }
 
     static get observedAttributes() {

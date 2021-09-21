@@ -5,6 +5,14 @@
     <title>Web-Components example</title>
 
     <script src="./profile-info.js"></script>
+    <script>
+        window.onload = () => {
+            const profileInfo = document.querySelector("profile-info")
+            profileInfo.addEventListener("profile-clicked", (e) => {
+                console.log("profile:", e.detail.profile.username)
+            })
+        }
+    </script>
 </head>
 <body>
 
