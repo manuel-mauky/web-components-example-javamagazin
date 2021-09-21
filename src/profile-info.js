@@ -1,14 +1,25 @@
 
 
 class ProfileInfo extends HTMLElement {
-    connectedCallback() {
-        this.innerHTML =`
+    constructor() {
+        super()
+        this.attachShadow({mode: "open"})
+        this.shadowRoot.innerHTML =`
+            <style>
+                #user-name {
+                    font-size: large;
+                    color: darkgrey;
+                }
+                #profile-image {
+                    width: 100px;
+                    height: 100px;
+                }
+            </style>
             <div>
                 <p id="user-name"></p>
                 <img id="profile-image">
             </div>
         `
-        this.update()
     }
 
     static get observedAttributes() {
@@ -34,15 +45,8 @@ class ProfileInfo extends HTMLElement {
     }
 
     update() {
-        const userNameElement = this.querySelector("#user-name")
-        if(userNameElement) {
-            userNameElement.textContent = this.userName
-        }
-
-        const profileImageElement = this.querySelector("#profile-image")
-        if(profileImageElement) {
-            profileImageElement.src = this.imageUrl
-        }
+        this.shadowRoot.querySelector("#user-name").textContent = this.userName
+        this.shadowRoot.querySelector("#profile-image").src = this.imageUrl
     }
 }
 
