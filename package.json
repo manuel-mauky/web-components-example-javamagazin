@@ -4,11 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server src/"
+    "build": "tsc && cp src/profile-info.js dist/",
+    "start": "es-dev-server --node-resolve --watch --port 8080"
   },
   "author": "Manuel Mauky",
   "license": "ISC",
   "devDependencies": {
-    "http-server": "^13.0.2"
+    "es-dev-server": "^2.1.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "lit": "^2.0.2"
   }
 }

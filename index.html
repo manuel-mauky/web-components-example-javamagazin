@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Web-Components example</title>
 
-    <script src="./profile-info.js"></script>
+    <script src="./dist/profile-info.js"></script>
+    <script type="module" src="./dist/profile-info-lit.js"></script>
     <script>
         window.onload = () => {
             const profileInfo = document.querySelector("profile-info")
@@ -20,5 +21,10 @@
     <profile-info username="Hugo" image-url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/User_icon_1.svg/480px-User_icon_1.svg.png">
         <div slot="description">Some description</div>
     </profile-info>
+
+    <h1>ProfileInfo with Lit:</h1>
+    <profile-info-lit username="Hugo" image-url="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/User_icon_1.svg/480px-User_icon_1.svg.png">
+        <div slot="description">Some description</div>
+    </profile-info-lit>
 </body>
 </html>
