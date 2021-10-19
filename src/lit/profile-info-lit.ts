@@ -1,5 +1,7 @@
-import {LitElement, html, css} from "lit";
+import {LitElement, html, css,} from "lit";
+import {customElement, property} from '@lit/reactive-element/decorators';
 
+@customElement("profile-info-lit")
 export class ProfileInfoLit extends LitElement {
     static styles = css`
       #user-name {
@@ -12,13 +14,11 @@ export class ProfileInfoLit extends LitElement {
       }
     `
 
-    static properties = {
-        username: { type: String, reflect: true},
-        imageUrl: { type: String, reflect: true, attribute: "image-url"}
-    }
+    @property({ type: String, reflect: true})
+    username: string = ""
 
-    username = ""
-    imageUrl = ""
+    @property({ type: String, reflect: true, attribute: "image-url"})
+    imageUrl:string = ""
 
     render() {
         return html`<div>
@@ -28,4 +28,3 @@ export class ProfileInfoLit extends LitElement {
         </div>`
     }
 }
-window.customElements.define("profile-info-lit", ProfileInfoLit)
