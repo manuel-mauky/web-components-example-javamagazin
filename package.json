@@ -3,13 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "tsc && cp src/profile-info.js dist/",
-    "start": "es-dev-server --node-resolve --watch --port 8080"
+    "start": "es-dev-server --node-resolve --watch --port 8080",
+    "test": "web-test-runner"
   },
   "author": "Manuel Mauky",
   "license": "ISC",
   "devDependencies": {
+    "@esm-bundle/chai": "^4.3.4-fix.0",
+    "@open-wc/testing": "^3.0.1",
+    "@web/dev-server-esbuild": "^0.2.14",
+    "@web/test-runner": "^0.13.20",
     "es-dev-server": "^2.1.0",
     "typescript": "^4.4.4"
   },

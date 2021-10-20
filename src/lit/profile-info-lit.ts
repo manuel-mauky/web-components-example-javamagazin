@@ -1,5 +1,5 @@
 import {LitElement, html, css,} from "lit";
-import {customElement, property} from '@lit/reactive-element/decorators';
+import {customElement, property} from '@lit/reactive-element/decorators.js';
 
 @customElement("profile-info-lit")
 export class ProfileInfoLit extends LitElement {
