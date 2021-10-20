@@ -20,10 +20,23 @@ export class ProfileInfoLit extends LitElement {
     @property({ type: String, reflect: true, attribute: "image-url"})
     imageUrl:string = ""
 
+    private handleImageClicked() {
+        this.dispatchEvent(new CustomEvent("profile-clicked", {
+            bubbles: true,
+            composed: true,
+            cancelable: false,
+            detail: {
+                profile: {
+                    username: this.username
+                }
+            }
+        }))
+    }
+
     render() {
         return html`<div>
             <p id="user-name">${this.username}</p>
-            <img id="profile-image" src=${this.imageUrl} alt="the profile image of the user">
+            <img @click=${this.handleImageClicked} id="profile-image" src=${this.imageUrl} alt="the profile image of the user">
             <div id="description"><slot name="description">Add a description</slot></div>
         </div>`
     }
